@@ -56,6 +56,8 @@ const io = require('socket.io')(server, {
       allowEIO3: true,
 });
 
+io.listen(6000)
+
 io.on("connection", (socket) => {
     console.log("Connected to socket.io");
     socket.on("setup", (userData) => {
