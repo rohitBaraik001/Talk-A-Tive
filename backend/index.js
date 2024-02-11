@@ -6,13 +6,13 @@ const color = require('colors')
 const userRoutes = require('./routes/userRoutes.js')
 const chatRoutes = require('./routes/chatRoutes.js')
 const { notFound, errorHandler } = require('./middleware/errorHandler.js')
-const cors = require('cors');
+// const cors = require('cors');
 const messageRoutes = require('./routes/messageRoutes.js')
 const path = require('path');
 const e = require('express');
 
 const app = express();
-app.use(cors());
+// app.use(cors());
 dotenv.config();
 connectDB();
 
