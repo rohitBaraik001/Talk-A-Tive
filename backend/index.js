@@ -8,7 +8,7 @@ const { notFound, errorHandler } = require('./middleware/errorHandler.js')
 const messageRoutes = require('./routes/messageRoutes.js')
 const path = require('path');
 
-// const app = express();
+const app = express();
 // app.use(cors());
 dotenv.config();
 connectDB();
@@ -42,7 +42,7 @@ if(process.env.NODE_ENV==='production'){
 app.use(notFound);
 app.use(errorHandler);
 const port = process.env.PORT || 3000;
-const server = app.listen(port++, console.log(`Server listening at ${port}`.blue.bold));
+const server = app.listen(port, console.log(`Server listening at ${port}`.blue.bold));
 
 const io = require('socket.io')(server, {
     pingTimeout: 60000,
