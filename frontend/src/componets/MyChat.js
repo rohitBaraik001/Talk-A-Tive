@@ -18,7 +18,6 @@ const MyChat = (props) => {
       const config = {
         headers: {
           Authorization: `Bearer ${user.token}`,
-          mode: "no-cors"
         },
       };
 
