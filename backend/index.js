@@ -8,7 +8,7 @@ const { notFound, errorHandler } = require('./middleware/errorHandler.js')
 const messageRoutes = require('./routes/messageRoutes.js')
 const path = require('path');
 
-const app = express();
+// const app = express();
 // app.use(cors());
 dotenv.config();
 connectDB();
