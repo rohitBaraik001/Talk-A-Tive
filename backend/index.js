@@ -47,9 +47,9 @@ console.log("serveer", server)
 const io = require('socket.io')(server, {
     pingTimeout: 6000,
     cors:{
-        origin: "*"
+        origin: "*",
+        transports: ["websocket"],
     },
-    transports: ["websocket"],
 });
 
 console.log("herer");
