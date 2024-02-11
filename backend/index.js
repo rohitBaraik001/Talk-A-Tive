@@ -44,7 +44,6 @@ app.use(notFound);
 app.use(errorHandler);
 const port = process.env.PORT || 5000;
 const server = app.listen(port, console.log(`Server listening at ${port}`.blue.bold));
-console.log("serveer", server)
 const io = require('socket.io')(server, {
     pingTimeout: 60000,
     cors:{
@@ -53,8 +52,6 @@ const io = require('socket.io')(server, {
 
    
 });
-
-console.log("herer");
 
 
 io.on("connection", (socket) => {
