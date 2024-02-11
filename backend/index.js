@@ -46,20 +46,20 @@ const server = app.listen(port, console.log(`Server listening at ${port}`.blue.b
 console.log("serveer", server)
 const io = require('socket.io')(server, {
     // pingTimeout: 6000,
-    // cors:{
-    //     origins: "*",
-    //     transports: ["websocket"],
-    // },
+    cors:{
+        origins: "*",
+        transports: ["websocket"],
+        methods:["GET", "POST"]
+    },
 
-    handlePreflightRequest: (req,res)=>{
-        const headers = {
-            "Access-Control-Allow-Headers":"Content-Type, Authorization",
-            "Access-Control-Allow-Origin":req.headers.origin,
-            "Access-Control-Allow-Credentials": true
-        }
-        res.writeHead(200,headers)
-        res.end()
-    }
+    // handlePreflightRequest: (req,res)=>{
+    //     const headers = {
+    //         "Access-Control-Allow-Headers":"Content-Type, Authorization",
+    //         "Access-Control-Allow-Origin":req.headers.origin,
+    //         "Access-Control-Allow-Credentials": true
+    //     }
+    //     res.writeHead(200,headers)
+    //     res.end()
 });
 
 console.log("herer");
