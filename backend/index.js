@@ -50,8 +50,10 @@ const server = app.listen(port, console.log(`Server listening at ${port}`.blue.b
 const io = require('socket.io')(server, {
     pingTimeout: 60000,
     cors: {
-        origin: "*"
-    }
+        origin: true,
+        credentials: true,
+      },
+      allowEIO3: true,
 });
 
 io.on("connection", (socket) => {
