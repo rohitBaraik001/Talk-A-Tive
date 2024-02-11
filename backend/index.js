@@ -51,8 +51,7 @@ const io = require('socket.io')(server, {
     
         
         credentials: true,
-      },
-      allowEIO3: true,
+      }
 });
 
 
