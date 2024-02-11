@@ -48,7 +48,6 @@ const io = require('socket.io')(server, {
     // pingTimeout: 6000,
     cors:{
         origins: "*",
-        transports: ["websocket"],
         methods:["GET", "POST"]
     },
 
