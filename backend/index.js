@@ -43,11 +43,13 @@ app.use(notFound);
 app.use(errorHandler);
 const port = process.env.PORT || 5000;
 const server = app.listen(port, console.log(`Server listening at ${port}`.blue.bold));
-
+console.log("serveer", server)
 const io = require('socket.io')(server, {
     pingTimeout: 6000,
     transports: ["websocket"],
 });
+
+console.log("herer");
 
 
 io.on("connection", (socket) => {
