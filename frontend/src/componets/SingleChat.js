@@ -47,7 +47,7 @@ const SingleChat = (props) => {
             };
 
             setLoading(true);
-            const { data } = await axios.get(`http://localhost:5000/api/message/${selectedChat._id}`, config);
+            const { data } = await axios.get(`/api/message/${selectedChat._id}`, config);
             setMessages(data);
             setLoading(false);
 
