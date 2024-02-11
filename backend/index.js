@@ -48,7 +48,13 @@ const io = require('socket.io')(server, {
     // pingTimeout: 6000,
     cors:{
         origin: "https://talk-a-tive-pzen.onrender.com",
-        methods:["GET", "POST"]
+        methods:["GET", "POST"],
+        headers : {
+            "Access-Control-Allow-Headers":"Content-Type, Authorization",
+            "Access-Control-Allow-Origin":req.headers.origin,
+            "Access-Control-Allow-Credentials": true
+        }
+
     },
 
     handlePreflightRequest: (req,res)=>{
