@@ -96,3 +96,7 @@ io.on("connection", (socket) => {
         socket.leave(userData._id);
     });
 })
+
+server.prependListener("request", (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+ });
