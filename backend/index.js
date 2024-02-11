@@ -4,16 +4,17 @@ const connectDB = require('./config/db.js');
 const userRoutes = require('./routes/userRoutes.js')
 const chatRoutes = require('./routes/chatRoutes.js')
 const { notFound, errorHandler } = require('./middleware/errorHandler.js')
-// const cors = require('cors');
+const cors = require('cors');
 const messageRoutes = require('./routes/messageRoutes.js')
 const path = require('path');
 
 const app = express();
-// app.use(cors());
+app.use(cors());
 dotenv.config();
 connectDB();
 
 app.use(express.json());
+
 
 
 
@@ -57,15 +58,7 @@ const io = require('socket.io')(server, {
 
     },
 
-    handlePreflightRequest: (req,res)=>{
-        const headers = {
-            "Access-Control-Allow-Headers":"Content-Type, Authorization",
-            "Access-Control-Allow-Origin":req.headers.origin,
-            "Access-Control-Allow-Credentials": true
-        }
-        res.writeHead(200,headers)
-        res.end()
-    }
+   
 });
 
 console.log("herer");
