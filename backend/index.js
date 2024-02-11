@@ -41,7 +41,7 @@ if(process.env.NODE_ENV==='production'){
 //----------------------------------DEPLOYMENT----------------------------------------------
 app.use(notFound);
 app.use(errorHandler);
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const server = app.listen(port++, console.log(`Server listening at ${port}`.blue.bold));
 
 const io = require('socket.io')(server, {
