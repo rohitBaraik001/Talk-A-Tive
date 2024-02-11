@@ -46,16 +46,9 @@ const port = process.env.PORT || 5000;
 const server = app.listen(port, console.log(`Server listening at ${port}`.blue.bold));
 console.log("serveer", server)
 const io = require('socket.io')(server, {
-    // pingTimeout: 6000,
+    pingTimeout: 60000,
     cors:{
-        origin: "https://talk-a-tive-pzen.onrender.com",
-        methods:["GET", "POST"],
-        
-            "Access-Control-Allow-Headers":"Content-Type, Authorization",
-            "Access-Control-Allow-Origin":"*",
-            "Access-Control-Allow-Credentials": true
-        
-
+        origin: "http://localhost:3000",
     },
 
    
