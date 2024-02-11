@@ -1,15 +1,12 @@
 const express = require('express');
-const chats = require('./data/data.js');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db.js');
-const color = require('colors')
 const userRoutes = require('./routes/userRoutes.js')
 const chatRoutes = require('./routes/chatRoutes.js')
 const { notFound, errorHandler } = require('./middleware/errorHandler.js')
 // const cors = require('cors');
 const messageRoutes = require('./routes/messageRoutes.js')
 const path = require('path');
-const e = require('express');
 
 const app = express();
 // app.use(cors());
@@ -45,7 +42,7 @@ if(process.env.NODE_ENV==='production'){
 app.use(notFound);
 app.use(errorHandler);
 const port = process.env.PORT || 5000;
-const server = app.listen(port, console.log(`Server listening at ${port}`.blue.bold));
+const server = app.listen(port++, console.log(`Server listening at ${port}`.blue.bold));
 
 const io = require('socket.io')(server, {
     pingTimeout: 60000,
@@ -56,7 +53,6 @@ const io = require('socket.io')(server, {
       allowEIO3: true,
 });
 
-io.listen(6000)
 
 io.on("connection", (socket) => {
     console.log("Connected to socket.io");
