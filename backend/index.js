@@ -45,7 +45,7 @@ const port = process.env.PORT || 3000;
 const server = app.listen(port, console.log(`Server listening at ${port}`.blue.bold));
 
 const io = require('socket.io')(server, {
-    pingTimeout: 0,
+    pingTimeout: 6000,
     cors: {
         origin: '*',
     
