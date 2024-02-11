@@ -50,11 +50,11 @@ const io = require('socket.io')(server, {
     cors:{
         origin: "https://talk-a-tive-pzen.onrender.com",
         methods:["GET", "POST"],
-        headers : {
+        
             "Access-Control-Allow-Headers":"Content-Type, Authorization",
-            "Access-Control-Allow-Origin":req.headers.origin,
+            "Access-Control-Allow-Origin":"*",
             "Access-Control-Allow-Credentials": true
-        }
+        
 
     },
 
