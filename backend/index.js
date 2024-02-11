@@ -47,7 +47,7 @@ console.log("serveer", server)
 const io = require('socket.io')(server, {
     // pingTimeout: 6000,
     cors:{
-        origins: "https://talk-a-tive-pzen.onrender.com",
+        origin: "https://talk-a-tive-pzen.onrender.com",
         methods:["GET", "POST"]
     },
 
