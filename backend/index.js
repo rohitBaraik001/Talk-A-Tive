@@ -46,9 +46,7 @@ const server = app.listen(port, console.log(`Server listening at ${port}`.blue.b
 
 const io = require('socket.io')(server, {
     pingTimeout: 6000,
-    cors: {
-        "Access-Control-Allow-Origin" :'*'
-      }
+   
 });
 
 
